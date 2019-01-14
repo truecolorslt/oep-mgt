@@ -1,0 +1,33 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /oep-mgt
+
+spring:
+# ===========thymeleaf配置===========
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/views/
+    suffix: .html
+    encoding: utf-8
+    #content-type: text/html
+    #mode: HTML5
+  resources:
+    #描述静态资源的存放位置
+#    static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oep?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password:  lantian,123
+
+
+# ===========静态页面配置===========
+#spring:
+#  mvc:
+#    view:
+#      suffix: .html
+#      prefix: views/
+#  resources:
+#    #描述静态资源的存放位置
+#    static-locations: classpath:/templates/,classpath:/static/

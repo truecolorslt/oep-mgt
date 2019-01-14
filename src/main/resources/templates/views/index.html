@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--th:insert  ：保留自己的主标签，保留th:fragment的主标签。-->
+<!--th:replace ：不要自己的主标签，保留th:fragment的主标签。-->
+<!--th:include ：保留自己的主标签，不要th:fragment的主标签。（官方3.0后不推荐）-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>后台管理系统 - 主页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+    <!--标题前面的图标-->
+    <!--<link rel="shortcut icon" href="favicon.ico">-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <!-- 字体css -->
+    <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <!-- 动画css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!--自定义样式-->
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <!--左侧导航 start-->
+    <div th:replace="common/frame_left :: frame_left"/>
+    <!--左侧导航 end-->
+
+    <!--右侧部分 start-->
+    <div th:replace="common/frame_right :: frame_right"/>
+    <!--右侧部分 end-->
+
+    <!--右侧边栏 start-->
+    <div th:replace="common/frame_theme :: frame_theme"/>
+    <!--右侧边栏 end-->
+</div>
+
+</body>
+</html>
+<!-- 全局js -->
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<!--h+通用js-->
+<script src="js/hplus.js?v=4.1.0"></script>
+<!--选项卡js-->
+<script type="text/javascript" src="js/contabs.js"></script>
+
+<!-- 第三方插件 start-->
+<!--侧边栏插件-->
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<!--滚动条插件-->
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!--web弹层插件-->
+<script src="js/plugins/layer/layer.min.js"></script>
+<!--进度条插件-->
+<script src="js/plugins/pace/pace.min.js"></script>
+<!-- 第三方插件 end-->
+
+<!-- 自定义js -->
+<script src="js/ems/index.js?v=1.0.0"></script>

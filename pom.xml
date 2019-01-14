@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.sky</groupId>
+    <artifactId>oep-mgt</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>oep-mgt</name>
+    <description>开放教育平台后台管理系统</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Spring默认使用jdk1.6，如果使用jdk1.8，需要在pom.xml的属性里面添加java.version -->
+        <java.version>1.8</java.version>
+        <json-lib.version>2.4</json-lib.version>
+        <com.alibaba.fastjson.version>1.2.44</com.alibaba.fastjson.version>
+        <mp.springboot.version>3.0.7.1</mp.springboot.version>
+        <mysql.version>5.1.40</mysql.version>
+    </properties>
+
+    <!-- Spring通过添加spring-boot-starter-*这样的依赖就能支持具体的某个功能。 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--测试模块，包括JUnit、Hamcrest、Mockito。-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--前端模板引擎thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- springboot热部署依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional><!-- 这个需要为 true 热部署才有效 -->
+        </dependency>
+
+        <!--springboot 依赖 mybatis-plus框架-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mp.springboot.version}</version>
+        </dependency>
+
+        <!--3.0.7.1以后，移除 对 mybatis-plus-generator 包的依赖,自己按需引入-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mp.springboot.version}</version>
+        </dependency>
+
+        <!-- freemarker 模板引擎 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+
+        <!--thymeleaf layout布局-->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+        </dependency>
+
+        <!-- mysql对应包依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <!-- 打包后的jar包名称 -->
+        <finalName>oep-mgt</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--开启热部署，该配置必须-->
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+
+            <!--springboot 跳过单元测试-->
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>-->
+        </plugins>
+    </build>
+
+</project>
