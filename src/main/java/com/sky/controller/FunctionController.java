@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
 
-import java.util.Map;
-
 /**
  * <p>
  * 前端控制器
